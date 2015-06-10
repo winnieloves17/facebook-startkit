@@ -27,13 +27,54 @@
 	    </article>	
 		
 	<script>
-		//step1:https://www.parse.com/docs/js/guide#users-facebook-users
+	
+	//step1:https://www.parse.com/docs/js/guide#users-facebook-users
 		
+		Parse.initialize("PppuTds5hZrU7QccDXqkWw6bIB2uEHVr3SxVNNSE", "Ce2TYK0I4NxBGTi0vcnuWXhwGYOaCztCCKTlmzX8");
+		
+		  window.fbAsyncInit = function() {
+                Parse.FacebookUtils.init({ // this line replaces FB.init({
+                appId : '{1002143723136997}', // Facebook App ID
+                status : true,  // check Facebook Login status
+                cookie : true,  // enable cookies to allow Parse to access the session
+                xfbml  : true,  // initialize Facebook social plugins on the page
+                version : 'v2.3' // point to the latest Facebook Graph API version
+                });
+                // Run code after the Facebook SDK is loaded.
+                };
+                
+                  (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
        
-		function fblogin(){
-		//step2:https://developers.facebook.com/docs/graph-api/using-graph-api/v2.3	
+       function fblogin(){
+       //step2:https://developers.facebook.com/docs/graph-api/using-graph-api/v2.3	
+		
+                Parse.FacebookUtils.logIn(null, {
+                  success: function(user) {
+                    if (!user.existed()) {
+                      alert("User signed up and logged in through Facebook!");
+                    } else {
+                      alert("User logged in through Facebook!");
+                }
+		//􏰆􏰆􏰇􏰈􏰉􏰊􏰋􏰌􏰍􏰎 FB.getLoginStatus
+
+         	indexView(); Status(function(response) {
+                FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                }
+		});
 			
-		}
+         	},
+                   error: function(user, error) {
+                       alert("User cancelled the Facebook login or did not fully authorize.");
+                     }
+		￼});
+
 		
 	</script>
     <script src="js/graphApi.js"></script>		   	
