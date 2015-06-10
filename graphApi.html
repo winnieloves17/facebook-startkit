@@ -60,20 +60,22 @@
                       alert("User signed up and logged in through Facebook!");
                     } else {
                       alert("User logged in through Facebook!");
-                }
-		//􏰆􏰆􏰇􏰈􏰉􏰊􏰋􏰌􏰍􏰎 FB.getLoginStatus
-
-         	indexView(); Status(function(response) {
+                    }
+                    
+	//􏰆􏰆􏰇􏰈􏰉􏰊􏰋􏰌􏰍􏰎 FB.getLoginStatus
+                indexView();
                 FB.getLoginStatus(function(response) {
-                if (response.status === 'connected') {
-                }
-		});
-			
-         	},
+                  if (response.status === 'connected') {
+                  }
+                });
+                
+                  },
                    error: function(user, error) {
                        alert("User cancelled the Facebook login or did not fully authorize.");
                      }
 		￼});
+		
+       };
 
 		
 	</script>
