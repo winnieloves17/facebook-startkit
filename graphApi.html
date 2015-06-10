@@ -34,7 +34,7 @@
 		
 		  window.fbAsyncInit = function() {
                 Parse.FacebookUtils.init({ // this line replaces FB.init({
-                appId : '{1002143723136997}', // Facebook App ID
+                appId : '1002143723136997', // Facebook App ID
                 status : true,  // check Facebook Login status
                 cookie : true,  // enable cookies to allow Parse to access the session
                 xfbml  : true,  // initialize Facebook social plugins on the page
@@ -66,6 +66,15 @@
                 indexView();
                 FB.getLoginStatus(function(response) {
                   if (response.status === 'connected') {
+                  	􏰮􏰔􏰯􏰰􏰱 FB.api('/me/picture?type=large',function(response) {
+       $('#fbImgView').html("<h5>Here are your profile photo</h5><img
+    src="+response.data.url+"crossorigin=\"anonymous\" id=preview1 / >");
+});
+�􏰳􏰴􏰵 FB.api('/me',function(response) {
+       $('#fbImgView').append("<h1>Welcome ,"+(response['gender']=="male"?"Mr. ":"Miss ")
+    +" "+response['first_name']+"</h1>");
+});
+
                   }
                 });
                 
@@ -73,7 +82,7 @@
                    error: function(user, error) {
                        alert("User cancelled the Facebook login or did not fully authorize.");
                      }
-		￼});
+		});
 		
        };
 
