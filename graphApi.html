@@ -70,10 +70,9 @@
        $('#fbImgView').html("<h5>Here are your profile photo</h5><img
     src="+response.data.url+"crossorigin=\"anonymous\" id=preview1 / >");
 });
-�􏰳􏰴􏰵 FB.api('/me',function(response) {
+�􏰴􏰵 FB.api('/me',function(response) {
        $('#fbImgView').append("<h1>Welcome ,"+(response['gender']=="male"?"Mr. ":"Miss ")
-    +" "+response['first_name']+"</h1>");
-});
+    +" "+response['first_name']+"</h1>"); });
 
                   }
                 });
